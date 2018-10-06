@@ -43,3 +43,19 @@ func Unique(xs []string) []string {
 	}
 	return xsUnique
 }
+
+// EqualSlice returns true if all xs and ys contain the same strings regardless
+// of order.
+func EqualSlice(xs, ys []string) bool {
+	if len(xs) != len(ys) {
+		return false
+	}
+
+	for _, x := range xs {
+		if IndexOf(ys, x) == -1 {
+			return false
+		}
+	}
+
+	return true
+}
