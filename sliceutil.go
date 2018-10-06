@@ -32,3 +32,14 @@ func CopySlice(xs []string) []string {
 	}
 	return ys
 }
+
+// Unique returns a slice of the unique strings in `xs`.
+func Unique(xs []string) []string {
+	xsUnique := make([]string, 0)
+	for _, x := range xs {
+		if IndexOf(xsUnique, x) == -1 {
+			xsUnique = append(xsUnique, x)
+		}
+	}
+	return xsUnique
+}
